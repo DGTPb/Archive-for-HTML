@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>flexbox</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 20px;
+            height: 100%;
+            background-color: lightblue;
+            /* border: 1px solid blue; */
+            border-radius: 8px;
+        }
+
+        .grid-item {
+            position: relative;
+            border: 1px solid #6cf;
+            align-self: stretch;
+            justify-self: stretch;
+            overflow: hidden;
+        }
+
+        .grid-item::after {
+            content: '';
+            /* 伪元素必须有content属性 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* 这里设置渐变，比如：从上到下的半透明黑色渐变 */
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+            /* 3. 层级：比图片高，盖在上面 */
+            z-index: 2;
+            /* 不影响鼠标点击、悬停等交互 */
+            pointer-events: none;
+        }
+
+        .grid-item:nth-child(1) {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+
+        .grid-item:nth-child(2) {
+            grid-column: 3 / 4;
+            grid-row: 1 / 3;
+        }
+
+        .grid-item:nth-child(3) {
+            grid-column: 4 / 5;
+            grid-row: 1 / 3;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        img-big {
+            position: absolute;
+            display: block;
+        }
+
+        img-columns {
+            position: absolute;
+            display: block;
+        }
+
+        img-rows {
+            position: absolute;
+            display: block;
+        }
+
+        h1 {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 20%;
+            background: transparent;
+            text-align: left;
+            margin: 0;
+            padding: 8px 0 8px 50px;
+            color: white;
+            z-index: 10;
+        }
+
+        h2 {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 25%;
+            background: white;
+            text-align: left;
+            margin: 0;
+            padding: 8px 0 8px 10px;
+            color: black;
+            z-index: 10;
+        }
+
+        p {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 10%;
+            text-align: left;
+            margin: 0;
+            padding: 8px 0 8px 10px;
+            color: rgb(0, 251, 255);
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="sucai/active photo/game development.png" alt="game development" class="img-big">
+            <a href="https://launcher-pkg-ba-jp.yo-star.com/install_pkg/game_launcher/BlueArchive_JP/BlueArchive_JP_Gamelauncher-1.7.2-setup.exe"><h1>特殊活动</h1></a>
+            <p>活动期间参加活动赢取特殊奖励</p>
+        </div>
+        <div class="grid-item"><img src="sucai/active photo/magic girls.jpg" alt="magic girls" class="img-columns">
+            <h2>魔法少女|参加活动赢取奖励</h2>
+        </div>
+        <div class="grid-item"><img src="sucai/active photo/qiannian.jpg" alt="qiannian" class="img-columns">
+            <h2>千年祭|参加活动赢取奖励</h2>
+        </div>
+        <div class="grid-item"><img src="sucai/active photo/miku.jpg" alt="miku" class="img-rows">
+            <h2>初音未来|参加活动赢取奖励</h2>
+        </div>
+        <div class="grid-item"><img src="sucai/active photo/small.jpg" alt="small" class="img-rows">
+            <h2>山海经梦幻岛————一起来玩捉迷藏|参加活动赢取奖励</h2>
+        </div>
+        <div class="grid-item"><img src="sucai/active photo/hina.jpg" alt="hina" class="img-rows">
+            <h2>阳光绽放————她们的小夜曲|参加活动赢取奖励</h2>
+        </div>
+        <div class="grid-item"><img src="sucai/active photo/live.jpg" alt="live" class="img-rows">
+            <h2>鲜艳多彩的画布|参加活动赢取奖励</h2>
+        </div>
+    </div>
+</body>
+
+</html>
