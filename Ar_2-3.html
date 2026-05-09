@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>实验二</title>
+</head>
+<body>
+    <h1>调查</h1>
+    <form name="调查" method="post" action="">
+        <p>
+            喜欢的品牌 <input type="text"> 
+            产地
+            <select name="产地">
+                <option value="中国">中国</option>
+                <option value="意大利">意大利</option>
+                <option value="美国">美国</option>
+                <option value="朝鲜">朝鲜</option>
+            </select>
+        </p>
+        <p>
+            喜欢的原因
+            <input type="checkbox" name="原因" value="外观">外观
+            <input type="checkbox" name="原因" value="功能">功能
+            <input type="checkbox" name="原因" value="价格">价格
+            <br/><textarea name="其他原因" rows="7" cols="40">其他原因</textarea>
+        </p>
+        <p>
+            打分
+            <input type="radio" name="score" value="1">1
+            <input type="radio" name="score" value="2">2
+            <input type="radio" name="score" value="3">3
+            <input type="radio" name="score" value="4">4
+            <input type="radio" name="score" value="5">5
+        </p>
+        <p>
+            <input type="submit" value="提交">
+            <input type="reset" value="重置">
+        </p>
+    </form>
+</body>
+</html>

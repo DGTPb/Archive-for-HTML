@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #container {
+            margin: 0 auto;
+            width: 100%;
+            height: 100vh;
+        }
+
+        header {
+            grid-area: header;
+            background: #6cf;
+        }
+
+        #aside-left {
+            grid-area: aside-left;
+            background: #6cf;
+        }
+
+        #aside-right {
+            grid-area: aside-right;
+            background: #6cf;
+        }
+
+        main {
+            grid-area: main;
+            background: rgb(180, 230, 255)
+        }
+
+        footer {
+            grid-area: footer;
+            background: #1cf;
+        }
+        @media screen and (max-width:991px){
+          #container{
+                display: grid;
+                grid-template-columns: 1fr 3fr 1fr;
+                grid-template-rows: 1fr 8fr 1fr;
+                grid-template-areas: 
+                "header header header"
+                "main main main"
+                "footer footer footer";
+                grid-gap: 5px;
+            }  
+        }
+        @media screen and (min-width:992px) and (max-width:1200px){
+            #container{
+                display: grid;
+                grid-template-columns: 1fr 4fr 1fr;
+                grid-template-rows: 1fr 8fr 1fr;
+                grid-template-areas: 
+                "header header header"
+                "aside-left main main"
+                "footer footer footer";
+                grid-gap: 5px;
+            } 
+        }
+        @media screen and (min-width:1200px){
+           #container{
+                display: grid;
+                grid-template-columns: 1fr 3fr 1fr;
+                grid-template-rows: 1fr 8fr 1fr;
+                grid-template-areas: 
+                "header header header"
+                "aside-left main aside-right"
+                "footer footer footer";
+                grid-gap: 5px;
+            }  
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header></header>
+            <aside id="aside-left"></aside>
+            <main></main>
+            <aside id="aside-right"></aside>
+        <footer></footer>
+    </div>
+</body>
+</html>
